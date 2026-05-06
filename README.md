@@ -1,53 +1,53 @@
-# 🧠 Model-Based AI Agent
+# 🧠 Model-Based Agent
 
-A beginner-friendly implementation of a **Model-Based AI Agent** built using Python.
-
-This project demonstrates how an AI agent can:
-
-* Remember information 🧠
-* Store user data 📦
-* Retrieve past information 🔍
-* Respond based on memory + current input 🤖
+A Python implementation of a **Model-Based AI Agent** with memory and state management.
 
 ---
 
-# 🚀 What is a Model-Based Agent?
+# 🤖 What is a Model-Based Agent?
 
-A Model-Based Agent is an AI agent that:
+A Model-Based Agent can:
 
-> Uses both the **current input** and **stored memory (state)** to make decisions.
+✅ remember past information
+✅ use memory to make decisions
+✅ maintain internal state
 
-Unlike a Simple Reflex Agent, this agent can remember things told by the user.
+Unlike a Simple Reflex Agent, this agent does not rely only on current input.
 
 ---
 
 # 🏗️ Architecture
 
 ```text
-                 +------------------+
-                 |    User Input    |
-                 +---------+--------+
-                           |
-                           v
-                 +------------------+
-                 | Input Processing |
-                 +---------+--------+
-                           |
-                           v
-                 +------------------+
-                 |  Memory System   |
-                 | (Store/Retrieve) |
-                 +---------+--------+
-                           |
-                           v
-                 +------------------+
-                 | Decision Engine  |
-                 +---------+--------+
-                           |
-                           v
-                 +------------------+
-                 |      Output      |
-                 +------------------+
+        +------------------+
+        |   User Input     |
+        +--------+---------+
+                 |
+                 v
+        +------------------+
+        |  Input Cleaner   |
+        +--------+---------+
+                 |
+                 v
+        +------------------+
+        | Information      |
+        | Extraction       |
+        +--------+---------+
+                 |
+                 v
+        +------------------+
+        |     Memory       |
+        +--------+---------+
+                 |
+                 v
+        +------------------+
+        | Decision Engine  |
+        +--------+---------+
+                 |
+                 v
+        +------------------+
+        |     Output       |
+        +------------------+
 ```
 
 ---
@@ -55,15 +55,7 @@ Unlike a Simple Reflex Agent, this agent can remember things told by the user.
 # 🔄 Agent Flow
 
 ```text
-User Input
-    ↓
-Clean Input
-    ↓
-Extract Information
-    ↓
-Store / Retrieve Memory
-    ↓
-Generate Response
+User → main.py → agent.py → processor.py → memory.py → Response
 ```
 
 ---
@@ -86,75 +78,49 @@ model-based-agent/
 
 ---
 
-# 🧠 Components Explained
-
-| File           | Responsibility                             |
-| -------------- | ------------------------------------------ |
-| `memory.py`    | Stores and retrieves user information      |
-| `processor.py` | Cleans and extracts information from input |
-| `rules.py`     | Stores predefined reflex rules             |
-| `agent.py`     | Main decision-making logic                 |
-| `main.py`      | Runs the application                       |
-
----
-
 # ⚙️ Features
 
-✅ Stores user name
-✅ Stores user location
+✅ Stores user information
 ✅ Retrieves stored memory
-✅ Handles input cleaning
+✅ Handles multiple memory types
 ✅ Modular architecture
-✅ Beginner-friendly design
+✅ Stateful behavior
 
 ---
 
-# 🛠️ Technologies Used
+# 🧠 Memory Capabilities
 
-* Python 3.12
-* Object-Oriented Programming (OOP)
-* Rule-Based Processing
-* State Management
+The agent can remember:
+
+* user name
+* location
+* future expandable memory fields
 
 ---
 
-# ▶️ How to Run
+# 🚀 How to Run
 
-## 1️⃣ Clone Repository
+## 1️⃣ Create Virtual Environment
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/model-based-agent.git
+python -m venv venv
 ```
 
----
-
-## 2️⃣ Move into Project Folder
-
-```bash
-cd model-based-agent
-```
-
----
-
-## 3️⃣ Create Virtual Environment
+## 2️⃣ Activate Environment
 
 ### Windows
 
 ```bash
-py -3.12 -m venv venv
 venv\Scripts\activate
 ```
 
 ### Mac/Linux
 
 ```bash
-python3.12 -m venv venv
 source venv/bin/activate
 ```
 
----
-
-## 4️⃣ Run the Agent
+## 3️⃣ Run Agent
 
 ```bash
 python main.py
@@ -162,17 +128,17 @@ python main.py
 
 ---
 
-# 🧪 Example Conversation
+# 🧪 Example Interaction
 
 ```text
 You: my name is Ravi
 Agent: Got it! I will remember your name is Ravi
 
-You: i live in Chennai
-Agent: Got it! I will remember your location is Chennai
-
 You: what is my name
 Agent: Your name is Ravi
+
+You: i live in Chennai
+Agent: Got it! I will remember your location is Chennai
 
 You: where do i live
 Agent: You live in Chennai
@@ -180,62 +146,52 @@ Agent: You live in Chennai
 
 ---
 
-# 🧠 Memory Example
+# 🧠 Core Concepts Learned
 
-The agent internally stores data like:
-
-```python
-{
-    "name": "Ravi",
-    "location": "Chennai"
-}
-```
-
----
-
-# 🔥 Key Concepts Learned
-
-* Stateful AI Systems
-* Memory Management
-* Information Extraction
-* Input Processing
-* Modular Architecture
-* Rule-Based Decision Systems
+* Stateful agents
+* Memory systems
+* Information extraction
+* Internal state management
+* Modular AI architecture
 
 ---
 
 # ⚠️ Limitations
 
-❌ No long-term memory persistence
-❌ No machine learning
-❌ No reasoning/planning
-❌ No natural language understanding
-
-This project is designed for learning foundational AI agent architecture.
+* No learning
+* No planning
+* No reasoning
+* Only remembers predefined information
 
 ---
 
 # 🚀 Future Improvements
 
-* Save memory to file/database
-* Add multiple users
-* Add conversation history
-* Add planning system
-* Integrate LLMs
-* Build Goal-Based Agent
+* Persistent memory
+* Database integration
+* Planning systems
+* Multi-step reasoning
+* Learning mechanisms
 
 ---
 
-# 🎯 Learning Goal
+# 📚 Learning Outcome
 
-This project teaches the core principle of modern AI systems:
+This project demonstrates:
 
-> Current Input + Memory = Smarter Decisions
+```text
+Input + Memory → Decision → Action
+```
 
 ---
 
-# 👨‍💻 Author
+# 🔥 Key Upgrade from Simple Reflex Agent
 
-Built while learning different types of AI agents step-by-step.
+| Feature           | Simple Reflex | Model-Based |
+| ----------------- | ------------- | ----------- |
+| Memory            | ❌             | ✅           |
+| State             | ❌             | ✅           |
+| Context Awareness | ❌             | ✅           |
+| Rule-Based        | ✅             | ✅           |
 
 ---
